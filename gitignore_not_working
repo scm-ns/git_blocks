@@ -1,0 +1,13 @@
+Adding files to gitignore does not remove the files from the git. 
+remove the git cache first , then add all the files back . Then the rules
+from gitignore will be followed
+
+git rm -rf --cached . 
+git add . 
+
+
+// To remove a single file from the cache 
+git rm --cached file_name
+
+
+
