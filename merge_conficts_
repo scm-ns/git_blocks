@@ -1,0 +1,41 @@
+In git a branch can be merged into the branch you are currently working on by using 
+	1) pull 
+	2) fetch + merge
+
+1) pull is just a short hand for fetch + merge . 
+	pull gets the branch and tries to auto merge , ie if the remote changes and the local 
+	changes	do not over lap, then the branch is merged automatically. 
+	But if there are overlapping change
+	then you will have to do a manual merge resolution. 
+	In a manual merge resolution , go through the files . See where a distinct signature , 
+	with HEAD the commit sha is present . Edit the files to remove the signature and
+	choose the desired changes . 
+	After repeating this step for all the files with a merge conflict, just commit it and now
+	you are out of the merge phase
+
+
+	Example
+	
+	      C - D - E - I - J  (remote)
+	     / 	
+	A - B 
+	     \
+	      F - G - H (local)
+
+	merge remote to local
+
+
+		
+	      C - D - E - I - J  - L  - M 			(remote)
+	     / 			\ 
+	A - B  			 \
+	     \ 			  \
+	      F - G - H - - - - -  K - N - O 			(local) 
+				 
+				     ^ 
+				     Future work after the merge will be restricted to the branch you are in
+
+	After the  pull you start working at K 
+
+
+

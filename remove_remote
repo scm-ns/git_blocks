@@ -1,5 +1,0 @@
-// List all the remotes
-git remote -v
-
-// Remove a particular remote say origin
-git remote rm origin

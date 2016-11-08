@@ -1,0 +1,8 @@
+// Add a remove to the repo 
+git remote add <remote-nickname> <URL or git@github.com:<user-name>/<repo-name>.git >
+
+// List all the remotes
+git remote -v
+
+// Remove a particular remote say origin
+git remote rm origin

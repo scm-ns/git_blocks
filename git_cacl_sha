@@ -1,0 +1,23 @@
+Git uses sha1 hash algo to indentify each of its commits. The hash function tries to prevent 
+collisions between the inserted items. 
+
+Git uses a combination of items to create the sha1sum used to mark the commit. 
+They are : 
+	- the sha1sum identifying the source tree of the commit
+	- the parent commit sha1
+	- author info
+	- commiter info
+	- commit message 
+
+Git then adds a null byte , a string "commit" and the number of bytes in the combination above and
+feeds it into the sha1 algorithm to produce the commit
+
+in bash : 
+
+(printf "commit %s\0" $(git cat-file commit HEAD | wc -c); git cat-file commit HEAD) | sha1sum
+
+Here 	
+	printf - acts like the c printf
+	wc -c - count the number of bytes in the string piped into it
+	sha1sum - get the sha1sum for the values piped in
+

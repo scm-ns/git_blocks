@@ -1,0 +1,3 @@
+branch
+	A branch in git is fully defined by the SHA1sum of the commit at the tip
+
